@@ -3,33 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Left-Side Mixer Menu</title>
+    <title>Sonic Master | Sound Engineer & Producer</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <nav class="mixer-sidebar">
-        <div class="channel">
-            <a href="#home" class="label">HOME</a>
-            <div class="fader-track">
-                <input type="range" min="0" max="100" value="80">
-            </div>
-        </div>
-
-        <div class="channel">
-            <a href="#work" class="label">WORK</a>
-            <div class="fader-track">
-                <input type="range" min="0" max="100" value="40">
-            </div>
-        </div>
-
-        <div class="channel">
-            <a href="#about" class="label">ABOUT</a>
-            <div class="fader-track">
-                <input type="range" min="0" max="100" value="60">
-            </div>
-        </div>
+    <nav>
+        <div class="logo">SONIC<span>MASTER</span></div>
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact" class="btn-small">Hire Me</a></li>
+        </ul>
     </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Precision in Every <span>Decibel</span></h1>
+            <p>Mixing, Mastering, and Sound Design for Artists and Film.</p>
+            <a href="#work" class="btn-main">Listen to My Work</a>
+        </div>
+    </header>
+
+    <section id="services" class="container">
+        <h2 class="section-title">Services</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>Mixing</h3>
+                <p>Industry-standard clarity and depth for your tracks.</p>
+            </div>
+            <div class="card">
+                <h3>Mastering</h3>
+                <p>The final polish to make your music radio-ready.</p>
+            </div>
+            <div class="card">
+                <h3>Post-Production</h3>
+                <p>Sound design and foley for film and podcasts.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="work" class="dark-bg">
+        <div class="container">
+            <h2 class="section-title">Latest Demos</h2>
+            <div class="audio-item">
+                <p>Cinematic Orchestral Mix</p>
+                <audio controls src="your-audio-file.mp3"></audio>
+            </div>
+            <div class="audio-item">
+                <p>Modern Pop Mastering</p>
+                <audio controls src="your-audio-file-2.mp3"></audio>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <h2>Let's Make Some Noise</h2>
+        <p>Email: contact@sonicmaster.com</p>
+        <p>&copy; 2026 Sonic Master Studios</p>
+    </footer>
 
 </body>
 </html>

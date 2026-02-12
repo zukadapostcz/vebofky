@@ -1,81 +1,33 @@
-body {
-    background-color: #1a1a1a;
-    margin: 0;
-    font-family: 'Courier New', Courier, monospace;
-}
+/* General Styles */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #fff; background-color: #0a0a0a; }
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+ul { list-style: none; }
+.container { padding: 80px 10%; text-align: center; }
 
-.mixer-sidebar {
-    position: fixed;
-    left: 0;
-    top: 0;
-    height: 100vh;
-    width: 220px;
-    background: #2c2c2c;
-    display: flex;
-    flex-direction: column;
-    padding: 20px 10px;
-    box-shadow: 5px 0 15px rgba(0,0,0,0.5);
-    border-right: 4px solid #111;
-}
+/* Navigation */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: #111; position: sticky; top: 0; z-index: 100; }
+.logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
+.logo span { color: #00d4ff; }
+nav ul { display: flex; gap: 20px; align-items: center; }
+nav ul li a:hover { color: #00d4ff; }
 
-.channel {
-    display: flex;
-    align-items: center; /* Aligns label and fader horizontally */
-    justify-content: flex-end; /* Keeps everything tight to the slider */
-    height: 120px; /* Space for the rotated fader */
-    border-bottom: 1px solid #3d3d3d;
-    padding: 0 10px;
-}
+/* Hero Section */
+.hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1470') no-repeat center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
+.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
+.hero h1 span { color: #00d4ff; }
+.btn-main { display: inline-block; padding: 15px 30px; background: #00d4ff; color: #000; font-weight: bold; border-radius: 5px; margin-top: 20px; }
+.btn-main:hover { background: #fff; }
 
-.label {
-    background: #eee;
-    color: #111;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 0.75rem;
-    padding: 4px 8px;
-    margin-right: 15px;
-    transform: rotate(-5deg);
-    box-shadow: 2px 2px 0px rgba(0,0,0,0.2);
-    min-width: 60px;
-    text-align: center;
-    z-index: 2;
-}
+/* Services Cards */
+.section-title { font-size: 2.5rem; margin-bottom: 40px; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.card { background: #1a1a1a; padding: 40px; border-radius: 10px; border-bottom: 4px solid #00d4ff; }
 
-.label:hover {
-    background: #00ffcc;
-}
+/* Work Section */
+.dark-bg { background: #111; padding: 80px 10%; }
+.audio-item { background: #222; margin-bottom: 15px; padding: 20px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+audio { filter: invert(100%); }
 
-/* Fader Container */
-.fader-track {
-    width: 80px; 
-    height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-input[type="range"] {
-    appearance: none;
-    -webkit-appearance: none;
-    background: #111;
-    width: 100px; /* Length of the track */
-    height: 6px;
-    border-radius: 3px;
-    outline: none;
-    /* This makes it a vertical slider */
-    transform: rotate(-90deg);
-}
-
-/* The Fader Knob (Thumb) */
-input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    width: 24px;
-    height: 35px;
-    background: #444;
-    border: 1px solid #666;
-    cursor: pointer;
-    border-radius: 2px;
-    background-image: linear-gradient(to right, #555 46%, #ff3300 50%, #555 54%);
-    box-shadow: 0 0 5px rgba(0,0,0,0.8);
-}
+/* Footer */
+footer { text-align: center; padding: 60px 10%; background: #000; }

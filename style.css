@@ -1,0 +1,87 @@
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.mixer-board {
+    background: #2c2c2c;
+    padding: 40px;
+    border-radius: 10px;
+    display: flex;
+    gap: 20px;
+    box-shadow: inset 2px 2px 5px #000, 10px 10px 20px #000;
+    border-bottom: 5px solid #111;
+}
+
+.channel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(180deg, #333 0%, #222 100%);
+    padding: 20px 10px;
+    border-left: 1px solid #444;
+    border-right: 1px solid #111;
+    width: 80px;
+}
+
+.label {
+    color: #00ffcc;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-shadow: 0 0 5px #00ffcc66;
+    transform: rotate(-15deg); /* Slight tilt like tape labels */
+    background: #eee;
+    color: #111;
+    padding: 2px 5px;
+}
+
+.label:hover {
+    background: #00ffcc;
+}
+
+/* Fader Styling */
+.fader-track {
+    height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+input[type="range"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background: #111;
+    width: 200px; /* Length of the slider */
+    height: 8px;
+    border-radius: 5px;
+    outline: none;
+    /* Rotate the slider to be vertical */
+    transform: rotate(-90deg); 
+}
+
+/* The Fader Knob (Thumb) */
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 50px;
+    background: #444;
+    border: 2px solid #666;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    background-image: linear-gradient(to right, #555 45%, #ff3300 50%, #555 55%);
+}
+
+.channel-num {
+    margin-top: 30px;
+    color: #666;
+    font-size: 0.7rem;
+}

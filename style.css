@@ -1,33 +1,102 @@
-/* General Styles */
+:root {
+    --primary: #ff4d00;
+    --bg-dark: #0a0a0a;
+    --bg-card: #141414;
+    --text-main: #ffffff;
+    --text-dim: #b0b0b0;
+    --transition: all 0.3s ease;
+}
+
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; color: #fff; background-color: #0a0a0a; }
-a { text-decoration: none; color: inherit; transition: 0.3s; }
-ul { list-style: none; }
-.container { padding: 80px 10%; text-align: center; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; overflow-x: hidden; }
 
-/* Navigation */
-nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 10%; background: #111; position: sticky; top: 0; z-index: 100; }
-.logo { font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
-.logo span { color: #00d4ff; }
-nav ul { display: flex; gap: 20px; align-items: center; }
-nav ul li a:hover { color: #00d4ff; }
+/* --- OPRAVA PŘEKRÝVÁNÍ NADPISŮ --- */
+section {
+    scroll-margin-top: 50px;
+}
 
-/* Hero Section */
-.hero { height: 80vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?auto=format&fit=crop&q=80&w=1470') no-repeat center/cover; display: flex; align-items: center; justify-content: center; text-align: center; }
-.hero h1 { font-size: 3.5rem; margin-bottom: 10px; }
-.hero h1 span { color: #00d4ff; }
-.btn-main { display: inline-block; padding: 15px 30px; background: #00d4ff; color: #000; font-weight: bold; border-radius: 5px; margin-top: 20px; }
-.btn-main:hover { background: #fff; }
+/* --- NAVIGACE --- */
+nav { display: flex; justify-content: space-between; align-items: center; padding: 25px 8%; background: rgba(10, 10, 10, 0.98); position: sticky; top: 0; z-index: 2000; border-bottom: 1px solid #222; }
+.logo { font-size: 1.8rem; font-weight: 900; letter-spacing: 1px; flex-shrink: 0; }
+.logo span { color: var(--primary); }
+.hamburger { display: none; font-size: 1.8rem; cursor: pointer; color: #fff; }
 
-/* Services Cards */
-.section-title { font-size: 2.5rem; margin-bottom: 40px; }
-.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
-.card { background: #1a1a1a; padding: 40px; border-radius: 10px; border-bottom: 4px solid #00d4ff; }
+nav ul { display: flex; list-style: none; gap: 10px; align-items: center; }
+nav ul li a { text-decoration: none; color: #fff; font-size: 0.95rem; text-transform: uppercase; font-weight: 700; transition: var(--transition); padding: 12px 20px; }
+nav ul li a:hover { color: var(--primary); }
+nav ul li a.btn-contact { background: var(--primary); padding: 18px 35px !important; border-radius: 6px; border: 2px solid var(--primary); margin-left: 10px; }
 
-/* Work Section */
-.dark-bg { background: #111; padding: 80px 10%; }
-.audio-item { background: #222; margin-bottom: 15px; padding: 20px; border-radius: 5px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
-audio { filter: invert(100%); }
+/* --- HERO --- */
+.hero { height: 45vh; display: flex; align-items: center; justify-content: center; text-align: center; background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?q=80&w=1470'); background-size: cover; background-position: center; }
+.hero h1 { font-size: clamp(2.2rem, 8vw, 3.8rem); text-transform: uppercase; font-weight: 900; }
+.hero h1 span { color: var(--primary); }
+.location { color: var(--text-dim); letter-spacing: 1px; font-weight: 700; text-transform: uppercase; font-size: 0.85rem; margin-top: 15px; border: 1px solid #333; padding: 12px 24px; display: inline-block; border-radius: 50px; }
 
-/* Footer */
-footer { text-align: center; padding: 60px 10%; background: #000; }
+.expertise-bar { background: #111; border-bottom: 1px solid var(--primary); padding: 25px 0; text-align: center; }
+.expertise-bar p { color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; letter-spacing: 2px; font-weight: 600; padding: 0 20px; }
+
+/* --- SECTIONS --- */
+.container { padding: 80px 10%; position: relative; width: 100%; }
+.section-title { font-size: 2.2rem; text-align: center; text-transform: uppercase; color: var(--primary); border-bottom: 3px solid var(--primary); display: table; margin: 0 auto 60px; padding-bottom: 12px; font-weight: 900; }
+
+.tech-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+.tech-card { background: var(--bg-card); padding: 30px; border-radius: 12px; border: 1px solid #222; transition: var(--transition); }
+.tech-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+.tech-card h3 { color: var(--primary); margin-bottom: 20px; text-transform: uppercase; font-size: 1.1rem; font-weight: 800; border-left: 3px solid var(--primary); padding-left: 12px; }
+.tech-card li { padding: 6px 0; border-bottom: 1px solid #222; list-style: none; font-size: 0.85rem; color: var(--text-dim); }
+.tech-detail { color: #555 !important; font-size: 0.75rem !important; border-bottom: none !important; font-style: italic; }
+
+/* --- REFERENCE --- */
+.dark-section { background: #000; }
+.gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+.ref-card { background: #111; border-radius: 15px; border: 1px solid #222; overflow: hidden; display: flex; flex-direction: column; }
+.ref-img { height: 200px; background-size: cover; background-position: center; background-color: #222; border-bottom: 3px solid var(--primary); }
+
+.ref-deluxe { background-image: url('deluxe.jpg'); }
+.ref-srdcem { background-image: url('srdcem.png'); }
+.ref-kotvrdovice { background-image: url('kotasy.jpeg'); }
+.ref-prorock { background-image: url('prorock.png'); }
+.ref-sok { background-image: url('sok.jpeg'); }
+.ref-jps { background-image: url('jps.jpeg'); }
+
+.ref-body { padding: 25px; flex-grow: 1; }
+.ref-tag { color: var(--primary); font-size: 0.7rem; font-weight: 900; text-transform: uppercase; margin-bottom: 8px; }
+.ref-body p { color: var(--text-dim); font-size: 0.9rem; }
+
+/* --- TABULKA --- */
+.table-wrapper { background: var(--bg-card); border-radius: 12px; overflow: hidden; border: 1px solid #222; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 18px; text-align: left; border-bottom: 1px solid #222; }
+th { color: var(--primary); background: #1a1a1a; text-transform: uppercase; font-size: 0.8rem; }
+.price-disclaimer { margin: 30px auto 0; color: #555; font-size: 0.85rem; text-align: center; font-style: italic; }
+
+/* --- KONTAKT --- */
+.contact-wrapper { max-width: 700px; margin: 0 auto; background: var(--bg-card); padding: 40px; border-radius: 12px; border: 1px solid #222; }
+.form-row { display: flex; gap: 15px; margin-bottom: 15px; }
+input, textarea { width: 100%; padding: 15px; background: #0a0a0a; border: 1px solid #333; color: #fff; border-radius: 6px; font-family: inherit; }
+.btn-submit { width: 100%; padding: 20px; background: var(--primary); border: none; color: #fff; font-weight: 900; text-transform: uppercase; cursor: pointer; border-radius: 6px; }
+
+/* --- FOOTER --- */
+.footer-main { background: #000; padding: 60px 10% 40px; border-top: 3px solid var(--primary); margin-top: 60px; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; }
+.footer-col h3 { color: var(--primary); margin-bottom: 20px; text-transform: uppercase; }
+.footer-col p { color: var(--text-dim); margin-bottom: 8px; }
+.footer-bottom { text-align: center; margin-top: 40px; font-size: 0.8rem; color: #444; border-top: 1px solid #222; padding-top: 20px; }
+
+/* --- RESPONZIVITA --- */
+@media (max-width: 1050px) {
+    .hamburger { display: block; }
+    nav ul { position: absolute; top: 100%; left: 0; width: 100%; background: rgba(10, 10, 10, 0.98); flex-direction: column; padding: 20px 0; display: none; border-bottom: 1px solid #222; }
+    nav ul.active { display: flex; }
+    nav ul li { width: 100%; text-align: center; padding: 10px 0; }
+    nav ul li a.btn-contact { margin-left: 0; width: 80%; display: inline-block; }
+    .gallery { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .tech-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .gallery, .tech-grid { grid-template-columns: 1fr; }
+    .form-row { flex-direction: column; }
+    .container { padding: 40px 5%; }
+}
